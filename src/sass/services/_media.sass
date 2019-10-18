@@ -1,0 +1,12 @@
+@mixin for-extra-small
+	@media (max-width: 767px)
+		@content
+@mixin for-small
+	@media (min-width: 768px) and (max-width: 991px)
+		@content
+@mixin for-medium
+	@media (min-width: 992px) and (max-width: 1439px)
+		@content
+@mixin for-large
+	@media (min-width: 1440px)
+		@content

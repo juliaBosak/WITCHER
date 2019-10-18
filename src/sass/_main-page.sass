@@ -1,0 +1,153 @@
+.main-page
+	width: 100%
+	height: 100vh
+	background: url("../assets/img/bg(1).png") no-repeat
+	background-size: cover
+	padding: 0 2%
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	position: relative
+	overflow: hidden
+	&__img
+		flex-basis: 56%
+		height: 100%
+		display: flex
+		align-items: flex-end
+		justify-content: center
+	&__description
+		max-width: 553px
+		flex-basis: 28.8%
+		font-family: 'Cambria', sans-serif
+		font-weight: 700
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__title
+		text-shadow: 0 16px 24px #000000
+		color: #ffffff
+		text-align: center
+		text-transform: uppercase
+		margin-bottom: 59px
+		font-size: 50px
+		.big-title
+			font-size: 160px
+	&__promo-code-wrap
+		width: 467px
+		border: 1px dashed $gray
+		border-radius: 40px
+		font-family: "Arial MT", sans-serif
+		font-weight: 400
+		text-transform: uppercase
+		height: 80px
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-bottom: 60px
+	&__promo-code
+		width: 270px
+		color: $red
+		font-size: 40px
+		letter-spacing: 2.02px
+		border-right: 1px dashed $gray
+		line-height: 78px
+		text-align: center
+		display: inline-block
+	&__copy-button
+		font: inherit
+		width: 198px
+		color: #ffffff
+		font-size: 18px
+		letter-spacing: 1.8px
+		&:hover
+			color: $red
+		&:active
+			color: white
+	&__play-button
+		width: 360px
+		height: 80px
+		box-shadow: 0 16px 24px #000000
+		border-radius: 40px
+		background: $red
+		color: #ffffff
+		font-family: "Arial - Bold MT", sans-serif
+		font-size: 20px
+		font-weight: 400
+		text-transform: uppercase
+		letter-spacing: 2px
+		transition: all .3s
+		&:hover
+			background-color: darken($red, 10%)
+			box-shadow: 0 0 10px #fff
+		&:active
+			background-color: white
+			color: $red
+	&__logo
+		width: 214px
+		height: 60px
+		background: url("../assets/img/logo.png") center no-repeat
+		position: absolute
+		bottom: 10px
+		left: 30px
+	&__footer
+		position: absolute
+		color: $gray
+		font-family: "Arial MT", sans-serif
+		font-size: 14px
+		font-weight: 400
+		line-height: 22px
+		letter-spacing: 1.4px
+		bottom: 10px
+		right: 30px
+
+@mixin small-screen
+	.main-page
+		flex-direction: column-reverse
+		&__img
+			img
+				max-width: none
+		&__title
+			font-size: 34px
+			margin-bottom: 12px
+			.big-title
+				font-size: 110px
+		&__promo-code-wrap
+			width: 300px
+			margin-bottom: 12px
+			height: 60px
+		&__promo-code
+			font-size: 28px
+			line-height: 58px
+			width: 60%
+		&__copy-button
+			font-size: 12px
+			width: 40%
+		&__play-button
+			height: 60px
+			width: 300px
+
+@include for-large
+	.main-page
+		padding: 0 32px
+		background-position: 20px 23px
+		&__logo
+			bottom: 55px
+			left: 70px
+		&__footer
+			bottom: 41px
+			right: 70px
+		&__title
+			margin-left: 58px
+			font-size: 68px
+			.big-title
+				font-size: 214px
+@include for-small
+	@include small-screen
+@include for-extra-small
+	@include small-screen
+	.main-page
+		&__logo, &__footer
+			display: none
+
+
+
